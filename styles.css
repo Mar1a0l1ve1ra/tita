@@ -4,11 +4,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .voucher {
@@ -17,9 +13,9 @@ body {
     padding: 20px;
     width: 90%;
     max-width: 400px;
+    margin: 20px auto;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
-    position: relative;
     color: white;
 }
 
@@ -64,13 +60,16 @@ body {
     border: 2px dotted white;
     font-size: 1.2em;
     text-transform: uppercase;
-    animation: glow 1.5s infinite alternate, slideIn 0.8s ease-out;
 }
 
-.restart-button {
-    margin-top: 20px;
-    background-color: #007acc;
-    animation: none;
+.balloons {
+    position: absolute;
+    bottom: -100px;
+    width: 40px;
+    height: 60px;
+    background-color: red;
+    border-radius: 50%;
+    animation: float 10s infinite ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -78,7 +77,11 @@ body {
     to { opacity: 1; }
 }
 
-@keyframes glow {
-    from { box-shadow: 0 0 5px #fff, 0 0 10px #fff; }
-    to { box-shadow: 0 0 10px #ff4b4b, 0 0 20px #ff4b4b; }
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-120vh);
+    }
 }
