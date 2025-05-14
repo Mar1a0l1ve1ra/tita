@@ -8,7 +8,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow: hidden;
+    overflow-y: auto; /* Enables scrolling */
 }
 
 .voucher {
@@ -52,7 +52,7 @@ h1 {
 }
 
 .reveal-button.clicked {
-    background-color: #d43b3b !important;
+    background-color: #8B0000 !important; /* Brownish Dark Red */
     cursor: not-allowed;
     animation: none;
 }
