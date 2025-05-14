@@ -1,6 +1,6 @@
 /* General Styling */
 body {
-    background-color: #ffb6b6; /* Faded Red */
+    background-color: #ffb6b6;
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
@@ -12,7 +12,7 @@ body {
 }
 
 .voucher {
-    background-color: #002147; /* Navy */
+    background-color: #002147;
     border-radius: 15px;
     padding: 20px;
     width: 90%;
@@ -24,7 +24,7 @@ body {
 }
 
 h1 {
-    color: #ff4b4b; /* Red */
+    color: #ff4b4b;
 }
 
 .hidden {
@@ -39,7 +39,7 @@ h1 {
 .reveal-button {
     margin-top: 15px;
     padding: 10px 20px;
-    background-color: #ff4b4b; /* Red */
+    background-color: #ff4b4b;
     border: none;
     color: white;
     font-size: 1em;
@@ -53,10 +53,11 @@ h1 {
 
 .reveal-button.clicked {
     background-color: #d43b3b !important;
+    cursor: not-allowed;
     animation: none;
 }
 
-.reveal-button:hover {
+.reveal-button:hover:not(.clicked) {
     transform: scale(1.05);
     background-color: #d43b3b;
 }
@@ -77,32 +78,22 @@ h1 {
     animation: glow 1.5s infinite alternate, slideIn 0.8s ease-out;
 }
 
+.restart-button {
+    margin-top: 20px;
+    background-color: #007acc;
+    animation: none;
+}
+
+.restart-button:hover {
+    background-color: #005f99;
+}
+
 /* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
     }
     to {
-        opacity: 1;
-    }
-}
-
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
         opacity: 1;
     }
 }
