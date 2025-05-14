@@ -7,7 +7,7 @@
     <title>Vale-Prenda</title>
 </head>
 <body onload="createConfetti()">
-    <audio id="reveal-sound" src="reveal.mp3" preload="auto"></audio>
+    
     <div class="voucher">
         <h1>🎉 Surpresa Especial 🎉</h1>
 
@@ -16,19 +16,19 @@
         <div id="parte1" class="hidden">
             <h2>✨ Parte 1:</h2>
             <p>Vais a Londres para ver o <a href="https://abbavoyage.com" target="_blank">ABBA Voyage</a>! 🎤✨</p>
-            <button onclick="reveal('parte2', this); createBalloons()" id="btn-parte1" class="reveal-button hidden">Clica aqui para ver o resto da surpresa 🎁</button>
+            <button onclick="reveal('parte2', this); createConfetti()" id="btn-parte1" class="reveal-button hidden">Clica aqui para ver o resto da surpresa 🎁</button>
         </div>
 
         <div id="parte2" class="hidden">
             <h2>🏡 Parte 2:</h2>
-            <p>Vais ficar em casa da Maria, a menos de 5 minutos do local! 🚶‍♀️</p>
-            <button onclick="reveal('parte3', this); createBalloons()" id="btn-parte2" class="reveal-button hidden">Clica aqui para ver o resto da surpresa 🎁</button>
+            <p>Vais ficar na casa da Maria, a menos de 5 minutos do local! 🚶‍♀️</p>
+            <button onclick="reveal('parte3', this); createConfetti()" id="btn-parte2" class="reveal-button hidden">Clica aqui para ver o resto da surpresa 🎁</button>
         </div>
 
         <div id="parte3" class="hidden">
             <h2>🎟️ Parte 3:</h2>
             <p>Tens entradas para a Feira Vintage! 👗✨</p>
-            <button onclick="reveal('parte4', this); createBalloons()" id="btn-parte3" class="reveal-button hidden">Clica aqui para ver o resto da surpresa 🎁</button>
+            <button onclick="reveal('parte4', this); createConfetti()" id="btn-parte3" class="reveal-button hidden">Clica aqui para ver o resto da surpresa 🎁</button>
         </div>
 
         <div id="parte4" class="hidden">
