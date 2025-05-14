@@ -6,6 +6,7 @@ function reveal(part, button) {
 
     if (button) {
         button.classList.add('clicked');
+        button.disabled = true;
     }
 
     const nextButton = document.getElementById(`btn-${part}`);
@@ -13,10 +14,9 @@ function reveal(part, button) {
 
     // Play sound effect on reveal
     const sound = document.getElementById('reveal-sound');
-    sound.currentTime = 0; // Restart the sound
+    sound.currentTime = 0;
     sound.play();
 
-    // Confetti burst when the final part is revealed
     if (part === 'parte4') {
         createConfetti();
     }
@@ -34,22 +34,17 @@ function createConfetti() {
     }
 }
 
-// Create Rising Balloons with Strings and Bounce
-function createBalloons() {
-    for (let i = 0; i < 5; i++) {
-        const balloon = document.createElement('div');
-        balloon.classList.add('balloon');
-        balloon.style.left = Math.random() * window.innerWidth + 'px';
-        balloon.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+// Restart Experience
+function restartExperience() {
+    document.querySelectorAll('.visible').forEach((el) => {
+        el.classList.remove('visible');
+        el.classList.add('hidden');
+    });
 
-        const string = document.createElement('div');
-        string.classList.add('string');
-        balloon.appendChild(string);
+    document.querySelectorAll('.clicked').forEach((btn) => {
+        btn.classList.remove('clicked');
+        btn.disabled = false;
+    });
 
-        document.body.appendChild(balloon);
-
-        setTimeout(() => {
-            balloon.remove();
-        }, 10000);
-    }
+    document.querySelector('.voucher button').classList.remove('hidden');
 }
