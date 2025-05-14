@@ -8,7 +8,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow-y: auto; /* Enables scrolling */
+    overflow-y: auto;
 }
 
 .voucher {
@@ -21,10 +21,6 @@ body {
     text-align: center;
     position: relative;
     color: white;
-}
-
-h1 {
-    color: #ff4b4b;
 }
 
 .hidden {
@@ -52,14 +48,9 @@ h1 {
 }
 
 .reveal-button.clicked {
-    background-color: #8B0000 !important; /* Brownish Dark Red */
+    background-color: #8B0000 !important; 
     cursor: not-allowed;
     animation: none;
-}
-
-.reveal-button:hover:not(.clicked) {
-    transform: scale(1.05);
-    background-color: #d43b3b;
 }
 
 .ticket {
@@ -72,8 +63,6 @@ h1 {
     text-align: center;
     border: 2px dotted white;
     font-size: 1.2em;
-    width: 100%;
-    box-sizing: border-box;
     text-transform: uppercase;
     animation: glow 1.5s infinite alternate, slideIn 0.8s ease-out;
 }
@@ -84,25 +73,12 @@ h1 {
     animation: none;
 }
 
-.restart-button:hover {
-    background-color: #005f99;
-}
-
-/* Animations */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 @keyframes glow {
-    from {
-        box-shadow: 0 0 5px #fff, 0 0 10px #fff;
-    }
-    to {
-        box-shadow: 0 0 10px #ff4b4b, 0 0 20px #ff4b4b;
-    }
+    from { box-shadow: 0 0 5px #fff, 0 0 10px #fff; }
+    to { box-shadow: 0 0 10px #ff4b4b, 0 0 20px #ff4b4b; }
 }
