@@ -48,20 +48,17 @@ h1 {
     transition: transform 0.2s, background-color 0.3s;
     width: 100%;
     max-width: 350px;
+    animation: pulse 1.5s infinite;
+}
+
+.reveal-button.clicked {
+    background-color: #d43b3b !important;
+    animation: none;
 }
 
 .reveal-button:hover {
     transform: scale(1.05);
     background-color: #d43b3b;
-}
-
-a {
-    color: white;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
 }
 
 .ticket {
@@ -74,77 +71,47 @@ a:hover {
     text-align: center;
     border: 2px dotted white;
     font-size: 1.2em;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    box-sizing: border-box;
     text-transform: uppercase;
+    animation: glow 1.5s infinite alternate, slideIn 0.8s ease-out;
 }
 
-/* Confetti Styling */
-.confetti {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background-color: hsl(calc(360 * var(--i)), 100%, 50%);
-    animation: fall linear forwards;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: box-shadow 0.2s ease;
-}
-
-.confetti:hover {
-    box-shadow: 0 0 5px 2px white;
-}
-
-@keyframes fall {
-    to {
-        transform: translateY(100vh);
-    }
-}
-
-/* Balloon Styling */
-.balloon {
-    position: absolute;
-    bottom: -100px;
-    width: 30px;
-    height: 40px;
-    background-color: red;
-    border-radius: 50%;
-    animation: rise 5s linear forwards, bounce 0.5s ease;
-}
-
-.string {
-    width: 2px;
-    height: 50px;
-    background-color: #333;
-    position: absolute;
-    left: 14px;
-    top: 40px;
-}
-
-@keyframes rise {
-    to {
-        transform: translateY(-120vh);
-    }
-}
-
-@keyframes bounce {
-    0% {
-        transform: scale(0.8);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
+/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
     }
     to {
         opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px #fff, 0 0 10px #fff;
+    }
+    to {
+        box-shadow: 0 0 10px #ff4b4b, 0 0 20px #ff4b4b;
     }
 }
