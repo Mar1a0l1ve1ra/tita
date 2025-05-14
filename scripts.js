@@ -1,4 +1,3 @@
-// Reveal Function with Sound
 function reveal(part, button) {
     const element = document.getElementById(part);
     element.classList.remove('hidden');
@@ -12,17 +11,11 @@ function reveal(part, button) {
     const nextButton = document.getElementById(`btn-${part}`);
     if (nextButton) nextButton.classList.remove('hidden');
 
-    // Play sound effect on reveal
-    const sound = document.getElementById('reveal-sound');
-    sound.currentTime = 0;
-    sound.play();
-
     if (part === 'parte4') {
         createConfetti();
     }
 }
 
-// Create Confetti
 function createConfetti() {
     for (let i = 0; i < 150; i++) {
         const confetti = document.createElement('div');
@@ -34,7 +27,6 @@ function createConfetti() {
     }
 }
 
-// Restart Experience
 function restartExperience() {
     document.querySelectorAll('.visible').forEach((el) => {
         el.classList.remove('visible');
